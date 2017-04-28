@@ -1,29 +1,24 @@
 ---
 layout: default
-title: Home
+title: About Me
 notitle: true
 ---
 <div class="jumbotron">
-  <p>
-    The <b>Awesome Research Group</b> at <b>Example U</b> does all sorts of
-    research. Here is a place where we tell you exactly what that is!
-  </p>
+  <div class="row">
+    <div class="col-md-4">
+    <a href="http://placehold.it"><img src="http://placehold.it/180x200"></a>
+    </div>
+    <div class="col-md-8">
+        <h3>About Me</h3>
+        <p>The <b>Awesome Research Group</b> at <b>Example U</b> does all sorts of research. Here is a place where we tell you exactly what that is!</p>
+    </div>
+  </div>
 </div>
 
-<h2>News</h2>
+<h2>Recent Logs</h2>
 <ul class="news list-unstyled">
 {% for post in site.posts limit: site.front_page_news %}
-    {% if post.shortnews %}
-        <li class="shortnews">
-            <span class="date">{{ post.date | date_to_long_string }}</span>
-            {{ post.content }}
-        </li>
-    {% else %}
-        <li class="bloglink">
-            <span class="date">{{ post.date | date_to_long_string }}</span>
-            <a href="{{ post.url }}">&raquo; {{ post.title }}</a>
-        </li>
-    {% endif %}
+{% include news-item.html item=post %}
 {% endfor %}
 </ul>
 {% assign numposts = site.posts | size %}
