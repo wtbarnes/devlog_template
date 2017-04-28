@@ -1,0 +1,20 @@
+/* Font Awesome Mods*/
+.fa.fa-book.fa-lg:hover{
+  opacity: 0.75
+}
+.fa.fa-github.fa-lg:hover{
+  opacity: 0.75
+}
+
+.newsicon{
+  text-align: center;
+  color: #000000;
+  opacity: 0.3;
+  font-size: 2.5em;
+  /*padding: 0rem 1rem;
+  width: 2em;*/
+}
+
+.newstitle{
+  font-size: 18px;
+}
