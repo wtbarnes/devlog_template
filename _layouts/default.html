@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>{{ site.name }}: {{ page.title }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{ site.base }}/css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ site.base }}/css/group.css" rel="stylesheet">
-        <link href="{{ site.base }}/css/syntax.css" rel="stylesheet">
-        <link rel="alternate" type="application/atom+xml" title="Atom"
-            href="{{ site.base }}/blog/blog.xml">
+      {% include head.html %}
     </head>
     <body>
         <div class="container">
           <div class="header">
-            <ul class="nav nav-pills pull-right">
-              {% assign shorturl = page.url | replace:'index.html','' %}
-              {% for item in site.navigation %}
-                <li {% if item.link == shorturl %}class="active"{% endif %}>
-                  <a href="{{ site.base }}{{ item.link }}">
-                    {{ item.title }}
-                  </a>
+            <nav class="navbar">
+              <div class="navbar-header">
+               <a class="navbar-brand" href="{{ site.baseurl }}"><h2>My <tt>/dev/log</tt></h2></a>
+              </div>
+              <ul class="nav navbar-nav nav-pills pull-right ">
+                {% for item in site.navigation %}
+                {% assign shortlink = item.link | prepend: '/' %}
+                <li class="{% if page.url == shortlink %}active{% endif %}">
+                  <a href="{{ item.link | prepend: site.baseurl }}">{{ item.title }}</a>
                 </li>
-              {% endfor %}
-            </ul>
-            <a href="{{ site.base }}/">
-                <img src="{{ site.base }}/img/logo.png"
-                    srcset="{{ site.base }}/img/logo@2x.png 2x"
-                    alt="Awesome" id="logo">
-            </a>
+                {% endfor %}
+              </ul>
+            </nav>
           </div>
 
           {% comment %}Liquid is sort of terrible! I think "!= true" is the
@@ -49,8 +40,6 @@
 
         </div> <!-- /container -->
 
-        <!-- MathJax -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
         <!-- Support retina images. -->
         <script type="text/javascript" src="{{ site.base }}/js/srcset-polyfill.js"></script>
     </body>
