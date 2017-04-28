@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="{{ site.base }}/css/bootstrap.min.css" rel="stylesheet">
         <link href="{{ site.base }}/css/group.css" rel="stylesheet">
+        <link href="{{ site.base }}/css/syntax.css" rel="stylesheet">
         <link rel="alternate" type="application/atom+xml" title="Atom"
             href="{{ site.base }}/blog/blog.xml">
     </head>
@@ -48,8 +49,9 @@
 
         </div> <!-- /container -->
 
+        <!-- MathJax -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
         <!-- Support retina images. -->
-        <script type="text/javascript"
-            src="{{ site.base }}/js/srcset-polyfill.js"></script>
+        <script type="text/javascript" src="{{ site.base }}/js/srcset-polyfill.js"></script>
     </body>
 </html>
