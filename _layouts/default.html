@@ -7,9 +7,9 @@
         <div class="container">
           <div class="header">
             <nav class="navbar">
-              <div class="navbar-header">
-               <a class="navbar-brand" href="{{ site.baseurl }}"><h2>My <tt>/dev/log</tt></h2></a>
-              </div>
+               <a class="navbar-brand" href="{{ site.baseurl }}">
+                 <h2>My <tt>/dev/log</tt></h2>
+               </a>
               <ul class="nav navbar-nav nav-pills pull-right ">
                 {% for item in site.navigation %}
                 {% assign shortlink = item.link | prepend: '/' %}
@@ -21,8 +21,6 @@
             </nav>
           </div>
 
-          {% comment %}Liquid is sort of terrible! I think "!= true" is the
-          only way to do negation?{% endcomment %}
           {% if page.notitle != true %}
           <h2>{{ page.title }}</h2>
           {% endif %}
@@ -31,10 +29,7 @@
 
           <div class="footer">
             <p>
-              <a href="http://dept.example.edu/">Illustrious Department</a>
-              at the
-              <a href="http://example.edu/">University of
-                Example</a>
+              My dev log / Built with <a href="https://github.com/wtbarnes/devlog_template">devlog_template</a>
             </p>
           </div>
 
